@@ -150,29 +150,34 @@
         </script>
 
         <script>
-            async function fetchStatus() {
-                try {
-                    const res = await fetch('/api/status');
-                    const data = await res.json();
-                    const statusText = document.getElementById('statusText');
+  async function fetchStatus() {
+    try {
+      const res = await fetch("/api/status");
+      console.log("fetch /api/status returned:", res.status, res.headers.get("content-type"));
+      const data = await res.json();
+      console.log("parsed JSON:", data);
+      const statusText = document.getElementById("statusText");
 
-                    statusText.classList.remove('status-online', 'status-offline');
+      statusText.classList.remove("status-online", "status-offline");
 
-                    if (data.status === 'online') {
-                        statusText.textContent = 'Online!';
-                        statusText.classList.add('status-online');
-                    } else {
-                        statusText.textContent = 'Offline!';
-                        statusText.classList.add('status-offline');
-                    }
-                } catch (err) {
-                    const statusText = document.getElementById('statusText');
-                    statusText.textContent = 'Error fetching status';
-                    statusText.classList.remove('status-online', 'status-offline');
-                }
-            }
-            fetchStatus();
-            setInterval(fetchStatus, 5000);
-        </script>
+      if (data.status === "online") {
+        statusText.textContent = "Online!";
+        statusText.classList.add("status-online");
+      } else {
+        statusText.textContent = "Offline!";
+        statusText.classList.add("status-offline");
+      }
+    } catch (err) {
+      console.error("Error in fetchStatus:", err);
+      const statusText = document.getElementById("statusText");
+      statusText.textContent = "Error fetching status";
+      statusText.classList.remove("status-online", "status-offline");
+    }
+  }
+
+  fetchStatus();
+  setInterval(fetchStatus, 5000);
+</script>
+
 </body>
 </html>
