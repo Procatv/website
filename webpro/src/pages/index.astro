@@ -152,7 +152,7 @@
         <script>
   async function fetchStatus() {
     try {
-      const res = await fetch("/api/status");
+      const res = await fetch("/status");
       console.log("fetch /api/status returned:", res.status, res.headers.get("content-type"));
       const data = await res.json();
       console.log("parsed JSON:", data);
