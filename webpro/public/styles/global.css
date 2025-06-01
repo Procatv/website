@@ -1,0 +1,550 @@
+/* FONTS */
+@font-face {
+    font-family: "perfect";
+    src: url("/docs/assets/fonts/Minecraft.woff2") format("woff2"),
+        url("/docs/assets/fonts/Minecraft.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nice";
+    src: url("/docs/assets/fonts/Pixel_NES.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "double";
+    src: url("/docs/assets/fonts/Web437_NEC_APC3_8x16.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html {
+    background: #000;
+    height: 100%;
+
+}
+
+
+li {
+    --body-text-shadow:
+        0 0 23px #ffffff56,
+        0 0 40px #b300ff4f;
+    text-shadow: var(--body-text-shadow);
+}
+
+/* 2️⃣  content styling */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    /* position: absolute; */
+    position: fixed;
+    inset: 0;
+    background: url('/docs/stars.gif');
+    background-position: top center;
+    background-size: cover;
+    background-attachment: scroll;
+    filter: blur(6px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    width: 900px;
+}
+
+.logo {
+    font-family: "nice", monospace;
+    font-size: 80px;
+    color: #ff07dac4;
+    text-shadow: 4px 4px 0 #7c0771ce,
+        0 0 6px #e969ff,
+        0 0 12px #de4bff,
+        0 0 18px #ffffff;
+    letter-spacing: 3px;
+    user-select: none;
+
+    /* changes ↓ */
+    /* shrink-wrap to the text */
+    margin-top: 10px;
+    margin: 0 auto;
+    /* now this truly centers the div */
+    text-align: center;
+    /* still needed if you keep the <p> */
+}
+
+
+.logo p {
+    margin: 0 auto;
+}
+
+.main,
+.blog,
+.projBox,
+.expBox {
+    background-color: rgba(0, 0, 0, 0.813);
+    color: white;
+}
+
+header {
+    display: flex;
+    font-family: "perfect";
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 30px;
+}
+
+nav ul {
+    font-family: "perfect";
+    list-style: none;
+    margin-bottom: 2px;
+    padding-left: 2px;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-family: "perfect";
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.divider.glow {
+    border: none;
+    height: 2px;
+    width: 100%;
+    background: #41356b;
+    box-shadow: 0 0 6px #dbd1f0;
+}
+
+.main {
+    width: 680px;
+    margin: 0 20px 0 0;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.main p {
+    font-size: 18px;
+    font-family: "double";
+    --body-text-shadow:
+        0 0 23px #ffffff,
+        0 0 40px #b300ffd9;
+    text-shadow: var(--body-text-shadow);
+}
+
+.main h2 {
+    font-family: "double";
+    gap: 10px;
+    font-size: 32px;
+    margin-left: 50px;
+
+}
+
+.title {
+    padding-right: 540px;
+    width: 300px;
+    text-shadow:
+        /* hard offset shadow (keeps pixel-art look) */
+        4px 4px 0 #7c0771ce,
+
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #e8e8e8;
+}
+
+.status-online {
+    color: #18ff18ea;
+    text-shadow:
+        0 0 5px #39bb39,
+        0 0 10px #3fb33f,
+        0 0 20px #00ff00;
+}
+
+.status-offline {
+    color: #ff4444;
+    text-shadow:
+        0 0 5px #ff4444,
+        0 0 10px #ff4444,
+        0 0 20px #ff4444;
+}
+
+
+.About {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px 0px 20px 20px;
+    max-width: 1000px;
+
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile img {
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    border: 4px solid #ae51a0;
+    outline: 2px solid #893ca8;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0px 0px #f5cfff;
+    margin-right: 25px;
+    outline-offset: -2px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.profile img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow:
+        0 0 0 6px #7c0771,
+        4px 4px 0 6px #000;
+}
+
+
+
+.profile-text {
+    max-width: 400px;
+
+
+    --body-text-shadow:
+        0 0 23px #ffffff,
+        0 0 40px #b300ff87;
+    text-shadow: var(--body-text-shadow);
+
+}
+
+.skills {
+    font-family: "double";
+    margin-left: 50px;
+    margin-top: 40px;
+    max-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.titlexp {
+    padding-left: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-shadow:
+        4px 4px 0 #7c0771ce,
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #ebaedd;
+}
+
+.side.box {
+    width: 180px;
+    /* explicit so nothing shrinks */
+    flex: 0 0 160px;
+    font-family: "double";
+    font-size: 20px;
+    text-align: left;
+    height: 327px;
+    background-color: #000000db;
+    overflow: hidden;
+    /* optional – hides overflow text    */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border-color: rgb(41, 40, 42);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* unchanged centering row */
+.box-row {
+    display: grid;
+}
+
+
+.fun {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.blog {
+    font-family: "double";
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    /* margin: 1px auto; */
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 680px;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+}
+
+.blog p {
+    --body-text-shadow:
+        0 0px 20px #ffffff,
+        0 0px 20px #b300ffb1;
+    text-shadow: var(--body-text-shadow);
+}
+
+.blog h2 {
+    text-shadow:
+        /* hard offset shadow (keeps pixel-art look) */
+        4px 4px 0 #7c0771ce,
+
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #ebaedd;
+}
+
+.project-list {
+    font-family: "double";
+    /* no bullets */
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.project-list li {
+    margin-bottom: .8rem;
+    margin-left: 40px;
+    --body-text-shadow:
+        0 0px 20px #ffffff,
+        0 0px 20px #b300ffad;
+    text-shadow: var(--body-text-shadow);
+    /* space between items */
+}
+
+/* remove bullets & tighten spacing */
+.link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link-list li {
+    margin: 8px 0;
+    text-align: center;
+    font-size: 19px;
+}
+
+.link-list a {
+    font-family: "perfect", monospace;
+    /* match your pixel font */
+    color: #ffffff;
+    /* light purple to fit the theme */
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.link-list a:hover {
+    color: #fff;
+    text-shadow: 0 0 6px #e969ff;
+}
+
+.sideTitle {
+    text-align: center;
+    font-family: "double";
+    color: white;
+    text-shadow:
+        /* hard offset shadow (keeps pixel-art look) */
+        4px 4px 0 #7c0771ce,
+
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #ebaedd;
+}
+
+.mainBox {
+    display: grid;
+}
+
+.sidebox {
+    width: 200px;
+    /* explicit so nothing shrinks */
+    flex: 0 0 190px;
+    font-family: "double";
+    font-size: 20px;
+    text-align: left;
+    /* height: 427px; */
+    background-color: #000000db;
+    overflow: hidden;
+    /* optional – hides overflow text    */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    padding-bottom: 20px;
+
+}
+
+.projBox {
+    width: 680px;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+}
+
+.projects {
+    padding-left: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects h2 {
+    font-family: "double";
+    text-shadow:
+        /* hard offset shadow (keeps pixel-art look) */
+        4px 4px 0 #7c0771ce,
+
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #ebaedd;
+}
+
+.projContent {
+    padding-left: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.expBox {
+    width: 680px;
+    font-family: "double";
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0 0 6px #fff;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    border-radius: 12px;
+
+
+}
+
+.exp {
+    padding-left: 40px;
+    max-width: 1000px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.qf {
+    font-size: 20px;
+    font-family: "double";
+}
+
+h3 {
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+p {
+    letter-spacing: 2px;
+
+}
+
+th {
+    letter-spacing: 2px;
+}
+
+.sideMenu {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.job-list p {
+    --body-text-shadow:
+        0 0 20px #ffffff,
+        0 0 20px #b300ffd9;
+    text-shadow: var(--body-text-shadow);
+}
+
+.api1 {
+    width: 200px;
+    margin-top: 20px;
+    /* explicit so nothing shrinks */
+    flex: 0 0 60px;
+    font-family: "double";
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow:
+        /* hard offset shadow (keeps pixel-art look) */
+        4px 4px 0 #7c0771ce,
+
+        /* glow layers – same hue, larger blur */
+        0 0 6px #e969ff,
+        /* near glow  */
+        0 0 12px #dd7ef3,
+        /* mid glow   */
+        0 0 18px #ebaedd;
+    background-color: #000000db;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border-color: rgb(42, 40, 40);
+    box-shadow: 0px 0px 6px 0px #fbf9f9;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+}
+
+.api1 p {
+    font-size: 14px;
+}

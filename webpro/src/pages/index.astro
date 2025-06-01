@@ -1,0 +1,178 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Procatv </title>
+    <link rel="stylesheet" href="/styles/global.css" />
+</head>
+
+<body>
+    <div class="mainBox">
+        <div class="logo">
+            <p> Procatv! </p>
+        </div>
+
+        <div class="container"> <!-- Overall box -->
+            <div class="box-row"> <!-- main box on left-->
+                <div class="main box">
+                    <div class="title">
+                        <h2>About Me</h2>
+                    </div>
+                    <!-- Flex container for profile and skills -->
+                    <div class="About">
+                        <div class="profile">
+                            <img class="headshot" src="/docs/pixelHead.png" data-hover="/docs/headshot.JPG"
+                                alt="Catherine head-shot">
+
+                            <div class="profile-text">
+                                <p>I'm Catherine Lozano</p>
+                                <p>
+                                    I'm a Computer Science student passionate about backend development and software
+                                    engineering.
+                                    Welcome to my portfolio website!
+                                </p>
+                                <div class="qf">
+                                    <p></p> Quick Facts </p>
+                                </div>
+                                <p> Based in Los Angeles, CA </p>
+                                <p> </p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- <img src="docs/dance.gif" alt="pixel dance animation" class="dance-gif"> -->
+
+                </div>
+
+
+                <div class="blog">
+                    <h2> Blog </h2>
+                    <p> Post #1 </p>
+                </div>
+
+                <!-- Resume In Detail + images -->
+                <!-- Need to add more detail-->
+
+                <div class="projBox">
+                    <div class="projects">
+                        <h2> Projects</h2>
+                    </div>
+
+                    <div class="projContent">
+                        <ul class="project-list">
+                            <li>Website</li>
+                            <li>Website</li>
+                            <li>Website</li>
+                            <li>Website</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="expBox" id="expBox">
+                    <div class="titlexp">
+                        <h2> Experiences</h2>
+                    </div>
+
+                    <div class="exp">
+                        <ul class="job-list">
+                            <li>
+                                <h3>IBM Research</h3>
+                                <p>Qiskit Backend Software Developer</p>
+                            </li>
+
+                            <li>
+                                <h3>IBM Research</h3>
+                                <p>Qiskit Backend Software Developer</p>
+                            </li>
+
+                            <li>
+                                <h3>JPL</h3>
+                                <p>Project Support Office Software Developer</p>
+                            </li>
+
+                            <li>
+                                <h3>Quantum Foundry UCSB</h3>
+                                <p>Software Developer</p>
+                            </li>
+
+                            <li>
+                                <h3>Foley &amp; Lardner LLP</h3>
+                                <p>Administrative Assistant</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div> <!-- left side -->
+
+            <!-- side container on right -->
+            <div class="sideMenu">
+                <div class="sidebox">
+                    <h2 class="sideTitle">
+                        Links! </h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.linkedin.com/in/catherine-lozano/" target="_blank"
+                                rel="noopener">LinkedIn</a>
+                        </li>
+                        <li><a href="https://github.com/Procatv" target="_blank" rel="noopener">GitHub</a></li>
+
+                        <li><a href="https://www.youtube.com/@procatv4993" target="_blank" rel="noopener">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="api1">
+                    <p id="statusText" style="font-family: 'nice', monospace; font-size: 18px;">Loading status...</p>
+                </div>
+
+
+
+
+            </div> <!-- container -->
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const pic = document.querySelector('.headshot');
+                const original = pic.src;
+                const hover = pic.dataset.hover;
+
+                pic.addEventListener('mouseenter', () => pic.src = hover);
+                pic.addEventListener('mouseleave', () => pic.src = original);
+            });
+        </script>
+
+        <script>
+            async function fetchStatus() {
+                try {
+                    const res = await fetch('http://localhost:3000/status');
+                    const data = await res.json();
+                    const statusText = document.getElementById('statusText');
+
+                    statusText.classList.remove('status-online', 'status-offline');
+
+                    if (data.status === 'online') {
+                        statusText.textContent = 'Online!';
+                        statusText.classList.add('status-online');
+                    } else {
+                        statusText.textContent = 'Offline!';
+                        statusText.classList.add('status-offline');
+                    }
+                } catch (err) {
+                    const statusText = document.getElementById('statusText');
+                    statusText.textContent = 'Error fetching status';
+                    statusText.classList.remove('status-online', 'status-offline');
+                }
+            }
+            fetchStatus();
+            setInterval(fetchStatus, 5000);
+        </script>
+</body>
+</html>

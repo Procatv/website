@@ -1,0 +1,13 @@
+name = "procatv-site"
+account_id = "665a656d79c30cd27507a60227146379"
+compatibility_date = "2025-05-31"
+
+main = "index.js"        # must be quoted exactly like this
+[assets]
+binding   = "ASSETS"
+directory = "./public"   # or "./" if your static files live at the root
+exclude = [
+  ".git/**",
+  "node_modules/**",
+  "*.DS_Store"
+]
