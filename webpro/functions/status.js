@@ -2,7 +2,7 @@
 
 export async function onRequest(context) {
     // Proxy directly to your Render-hosted bot:
-    const target = "https://procatv-bot.onrender.com/status";
+    const target = "https://website-2swy.onrender.com/status";
   
     const apiResp = await fetch(target);
     const body = await apiResp.text();
