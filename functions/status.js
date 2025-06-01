@@ -1,7 +1,7 @@
 // webpro/functions/status.js
 
 export async function onRequest(context) {
-    // Proxy directly to your Render-hosted bot:
+    // Proxy directly to your Render-hosted
     const target = "https://website-2swy.onrender.com/status";
   
     const apiResp = await fetch(target);
