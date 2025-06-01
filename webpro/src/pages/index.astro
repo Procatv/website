@@ -152,7 +152,7 @@
         <script>
             async function fetchStatus() {
                 try {
-                    const res = await fetch('http://localhost:3000/status');
+                    const res = await fetch('/api/status');
                     const data = await res.json();
                     const statusText = document.getElementById('statusText');
 
