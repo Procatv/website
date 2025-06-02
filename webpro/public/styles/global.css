@@ -24,6 +24,13 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "RussianGothic";
+    src: local("Arial");
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0420-42FF;
+}
 
 html {
     background: #000;
@@ -151,16 +158,16 @@ nav a {
 }
 
 .main h2 {
-    font-family: "double";
     gap: 10px;
-    font-size: 32px;
+    font-size: 22px;
     margin-left: 50px;
 
 }
 
 .title {
-    padding-right: 540px;
-    width: 300px;
+    font-family: "nice";
+    padding-right: 40px;
+    width: 600px;
     text-shadow:
         /* hard offset shadow (keeps pixel-art look) */
         4px 4px 0 #7c0771ce,
@@ -170,7 +177,7 @@ nav a {
         /* near glow  */
         0 0 12px #dd7ef3,
         /* mid glow   */
-        0 0 18px #e8e8e8;
+        0 0 5px #e8e8e8;
 }
 
 .status-online {
@@ -193,18 +200,23 @@ nav a {
 .About {
     display: flex;
     align-items: flex-start;
-    padding: 0px 0px 20px 20px;
+    padding: 0px 0px 20px 0px;
     max-width: 1000px;
 
 }
 
 .profile {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
 }
 
-.profile img {
+.headshot {
+    margin-left: 17px;
+    margin-top: 5px;
+}
+
+.headshot img {
     width: 160px;
     height: 200px;
     object-fit: cover;
@@ -219,6 +231,8 @@ nav a {
     position: relative;
 }
 
+
+
 .profile img::after {
     content: "";
     position: absolute;
@@ -229,17 +243,21 @@ nav a {
         4px 4px 0 6px #000;
 }
 
-
-
 .profile-text {
     max-width: 400px;
-
-
     --body-text-shadow:
         0 0 23px #ffffff,
         0 0 40px #b300ff87;
     text-shadow: var(--body-text-shadow);
+}
 
+.profile-text h3 {
+    font-family: "double";
+    font-size: 24px;
+    font-style: oblique;
+    font-weight: 100;
+    margin: 0;
+    margin-top: 6px;
 }
 
 .skills {
@@ -290,6 +308,9 @@ nav a {
     display: grid;
 }
 
+.Overall {
+    display: flex;
+}
 
 .fun {
     max-width: 1000px;
@@ -335,22 +356,28 @@ nav a {
 }
 
 .project-list {
-    font-family: "double";
-    /* no bullets */
     margin: 0;
     padding: 0;
 
 }
 
+.project-list h3 {
+    font-size: 14px;
+    font-family: "double", "MS UI Gothic", "NEC_APC3", Tahoma;
+    -webkit-font-smoothing: none;
+    image-rendering: pixelated;
+    font-style: bold;
 
-.project-list li {
-    margin-bottom: .8rem;
-    margin-left: 40px;
+}
+
+.project-list p {
+    font-size: 16px;
+    font-family: "double";
+    color: white;
     --body-text-shadow:
         0 0px 20px #ffffff,
-        0 0px 20px #b300ffad;
+        0 0px 20px #b300ffb1;
     text-shadow: var(--body-text-shadow);
-    /* space between items */
 }
 
 /* remove bullets & tighten spacing */

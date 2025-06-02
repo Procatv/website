@@ -20,41 +20,37 @@
             <div class="box-row"> <!-- main box on left-->
                 <div class="main box">
                     <div class="title">
-                        <h2>About Me</h2>
+                        <h2>Welcome to my site!</h2>
                     </div>
                     <!-- Flex container for profile and skills -->
+                    <div class = "Overall">
+                    <div class = "side">
+                    <div class = "headshot">
+  <img 
+    id="headshot-img"
+    src="https://website-6gp.pages.dev/docs/pixelHead.png"
+    data-hover="/docs/headshot.JPG"
+    alt="Catherine head-shot"
+  >                    </div>
+                    </div>
                     <div class="About">
                         <div class="profile">
-                            <img class="headshot" src="/docs/pixelHead.png" data-hover="/docs/headshot.JPG"
-                                alt="Catherine head-shot">
-
                             <div class="profile-text">
-                                <p>I'm Catherine Lozano</p>
+                                <h3>Full-Stack Engineer & Distributed Systems Enthusiast</h3>
                                 <p>
-                                    I'm a Computer Science student passionate about backend development and software
-                                    engineering.
-                                    Welcome to my portfolio website!
+                                    I build high-performance back-end services (C++, Java) and polished front-end experiences (React).  
+                                    Recently at IBM Research, I optimized Qiskit’s routing passes and shipped a multithreaded HTTP server from scratch.
                                 </p>
-                                <div class="qf">
-                                    <p></p> Quick Facts </p>
-                                </div>
-                                <p> Based in Los Angeles, CA </p>
-                                <p> </p>
-
-                            </div>
+                          </div>
 
 
                         </div>
-                    </div>
-
-                    <!-- <img src="docs/dance.gif" alt="pixel dance animation" class="dance-gif"> -->
-
+                    </div> <!-- About --->
+                    </div> <!-- Overall -->
                 </div>
-
-
                 <div class="blog">
                     <h2> Blog </h2>
-                    <p> Post #1 </p>
+                    <p> Inspiration - June 4, 2025</p>
                 </div>
 
                 <!-- Resume In Detail + images -->
@@ -66,12 +62,16 @@
                     </div>
 
                     <div class="projContent">
-                        <ul class="project-list">
-                            <li>Website</li>
-                            <li>Website</li>
-                            <li>Website</li>
-                            <li>Website</li>
-                        </ul>
+                        <div class="project-list">
+                        <p> USC Eats Delivery Robot </p>
+                        <p> MasterChef Team Formation </p>
+                        <p> Multithreaded Traffic-Throttling Web Server</p>
+                        <p> Link-Layer & Network-Layer Server Network </p>
+                        <p> Transport-Layer & Application-Layer Server Network </p>
+                        <p>Lyrical Cloud </p>
+                        <p>FitMatch</p>
+                        <p>GeoWeather Portal</p>
+                        </div>
                     </div>
 
 
@@ -129,18 +129,19 @@
                         </li>
                     </ul>
                 </div>
-                <div class="api1">
-                    <p id="statusText" style="font-family: 'nice', monospace; font-size: 18px;">Loading status...</p>
-                </div>
-
-
-
-
-            </div> <!-- container -->
+              <div class="api1">
+  <p>
+    <span id="introText" style="font-family: 'double', sans-serif;">I’m </span>
+    <span id="statusText" style="font-family: 'nice', monospace; font-size: 18px;">
+      Loading..
+    </span>
+  </p>
+</div>
+        </div> <!-- container -->
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const pic = document.querySelector('.headshot');
+                const pic = document.querySelector('#headshot-img');
                 const original = pic.src;
                 const hover = pic.dataset.hover;
 
@@ -148,35 +149,38 @@
                 pic.addEventListener('mouseleave', () => pic.src = original);
             });
         </script>
-
         <script>
-  async function fetchStatus() {
-    try {
-      const res = await fetch("/status");
-      console.log("fetch /api/status returned:", res.status, res.headers.get("content-type"));
-      const data = await res.json();
-      console.log("parsed JSON:", data);
-      const statusText = document.getElementById("statusText");
+        document.addEventListener('DOMContentLoaded', () => {
+        const intro = document.getElementById('introText');
+        const statusText = document.getElementById('statusText');
+                    async function fetchStatus() {
+            try {
+            const res = await fetch("/status");
+            const data = await res.json();
 
-      statusText.classList.remove("status-online", "status-offline");
+            // Always show “I’m” when the fetch succeeds
+            intro.style.display = 'inline';
 
-      if (data.status === "online") {
-        statusText.textContent = "Online!";
-        statusText.classList.add("status-online");
-      } else {
-        statusText.textContent = "Offline!";
-        statusText.classList.add("status-offline");
-      }
-    } catch (err) {
-      console.error("Error in fetchStatus:", err);
-      const statusText = document.getElementById("statusText");
-      statusText.textContent = "Error fetching status";
-      statusText.classList.remove("status-online", "status-offline");
-    }
-  }
+            if (data.status === "online") {
+                statusText.textContent = "Online!";
+                statusText.classList.add("status-online");
+                statusText.classList.remove("status-offline");
+            } else {
+                statusText.textContent = "Offline!";
+                statusText.classList.add("status-offline");
+                statusText.classList.remove("status-online");
+            }
+            } catch (err) {
+            // On error, hide the “I’m” span and show only the error message
+            intro.style.display = 'none';
+            statusText.textContent = "Error!";
+            statusText.classList.remove("status-online", "status-offline");
+            }
+        }
 
-  fetchStatus();
-  setInterval(fetchStatus, 5000);
+                    fetchStatus();
+                    setInterval(fetchStatus, 5000);
+        });
 </script>
 
 </body>
