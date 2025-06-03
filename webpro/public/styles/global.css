@@ -53,19 +53,42 @@ body {
     min-height: 100vh;
 }
 
+/*
 body::before {
     content: "";
     /* position: absolute; */
-    position: fixed;
-    inset: 0;
-    background: url('/docs/stars.gif');
+/* position: fixed;
+    inset: 0; */
+/* background: url('/docs/stars.gif'); */
+/* background-color: #000;
     background-position: top center;
     background-size: cover;
     background-attachment: scroll;
     filter: blur(6px);
     z-index: -1;
     pointer-events: none;
+} */
+
+
+body::before {
+    content: "";
+    position: fixed;
+    height: 75%;
+    inset: 0;
+
+    /* 1st layer: your GIF
+       2nd layer: solid black behind it */
+    background:
+        url('/docs/starTest.gif') top center/cover no-repeat,
+        #000;
+
+    /* if you still want that blur on the combined layers: */
+    /* filter: blur(2px); */
+
+    z-index: -1;
+    pointer-events: none;
 }
+
 
 .container {
     margin: 0 auto;
