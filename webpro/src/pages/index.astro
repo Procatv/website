@@ -30,8 +30,7 @@
     id="headshot-img"
     src="https://website-6gp.pages.dev/docs/pixelHead.png"
     data-hover="/docs/headshot.JPG"
-    alt="Catherine head-shot">
-                        </div>
+    alt="Catherine head-shot">                    </div>
                     </div>
                     <div class="About">
                         <div class="profile">
@@ -141,54 +140,50 @@
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-  const pic = document.querySelector('#headshot-img');
-  const original = pic.src;
-  const hover = pic.dataset.hover;
+                const pic = document.querySelector('#headshot-img');
+                const original = pic.src;
+                const hover = pic.dataset.hover;
 
-  pic.addEventListener('mouseenter', () => {
-    pic.src = hover;
-    pic.classList.add('hover‐style');
-  });
-  pic.addEventListener('mouseleave', () => {
-    pic.src = original;
-    pic.classList.remove('hover‐style');
-  });
-});
-
+                pic.addEventListener('mouseenter', () => pic.src = hover);
+                pic.addEventListener('mouseleave', () => pic.src = original);
+            });
         </script>
         <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const intro = document.getElementById('introText');
-        const statusText = document.getElementById('statusText');
-                    async function fetchStatus() {
-            try {
-            const res = await fetch("/status");
-            const data = await res.json();
+document.addEventListener('DOMContentLoaded', () => {
+  const intro = document.getElementById('introText');
+  const statusText = document.getElementById('statusText');
+  const BOT_STATUS_URL = "https://website-2swy.onrender.com/status";
 
-            // Always show “I’m” when the fetch succeeds
-            intro.style.display = 'inline';
+  async function fetchStatus() {
+    try {
+      const res = await fetch(BOT_STATUS_URL, { cache: "no-store" });
+      const data = await res.json();
 
-            if (data.status === "online") {
-                statusText.textContent = "Online!";
-                statusText.classList.add("status-online");
-                statusText.classList.remove("status-offline");
-            } else {
-                statusText.textContent = "Offline!";
-                statusText.classList.add("status-offline");
-                statusText.classList.remove("status-online");
-            }
-            } catch (err) {
-            // On error, hide the “I’m” span and show only the error message
-            intro.style.display = 'none';
-            statusText.textContent = "Error!";
-            statusText.classList.remove("status-online", "status-offline");
-            }
-        }
+      // Always show “I’m” when the fetch succeeds
+      intro.style.display = 'inline';
 
-                    fetchStatus();
-                    setInterval(fetchStatus, 5000);
-        });
+      if (data.status === "online") {
+        statusText.textContent = "Online!";
+        statusText.classList.add("status-online");
+        statusText.classList.remove("status-offline");
+      } else {
+        statusText.textContent = "Offline!";
+        statusText.classList.add("status-offline");
+        statusText.classList.remove("status-online");
+      }
+    } catch (err) {
+      // On error, hide the “I’m” span and show only the error message
+      intro.style.display = 'none';
+      statusText.textContent = "Error!";
+      statusText.classList.remove("status-online", "status-offline");
+    }
+  }
+
+  fetchStatus();
+  setInterval(fetchStatus, 5000);
+});
 </script>
+
 
 </body>
 </html>
