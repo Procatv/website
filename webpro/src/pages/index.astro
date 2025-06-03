@@ -141,13 +141,20 @@
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const pic = document.querySelector('#headshot-img');
-                const original = pic.src;
-                const hover = pic.dataset.hover;
+  const pic = document.querySelector('#headshot-img');
+  const original = pic.src;
+  const hover = pic.dataset.hover;
 
-                pic.addEventListener('mouseenter', () => pic.src = hover);
-                pic.addEventListener('mouseleave', () => pic.src = original);
-            });
+  pic.addEventListener('mouseenter', () => {
+    pic.src = hover;
+    pic.classList.add('hover‐style');
+  });
+  pic.addEventListener('mouseleave', () => {
+    pic.src = original;
+    pic.classList.remove('hover‐style');
+  });
+});
+
         </script>
         <script>
         document.addEventListener('DOMContentLoaded', () => {
