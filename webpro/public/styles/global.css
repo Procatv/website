@@ -53,23 +53,6 @@ body {
     min-height: 100vh;
 }
 
-/*
-body::before {
-    content: "";
-    /* position: absolute; */
-/* position: fixed;
-    inset: 0; */
-/* background: url('/docs/stars.gif'); */
-/* background-color: #000;
-    background-position: top center;
-    background-size: cover;
-    background-attachment: scroll;
-    filter: blur(6px);
-    z-index: -1;
-    pointer-events: none;
-} */
-
-
 body::before {
     content: "";
     position: fixed;
@@ -79,16 +62,34 @@ body::before {
     /* 1st layer: your GIF
        2nd layer: solid black behind it */
     background:
-        url('/docs/starTest.gif') top center/cover no-repeat,
-        #000;
+        url('/docs/starTest.gif') top center/cover no-repeat;
 
     /* if you still want that blur on the combined layers: */
-    /* filter: blur(2px); */
+
 
     z-index: -1;
     pointer-events: none;
 }
 
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    /* fill the entire viewport as well */
+    height: 95%;
+    /* match ::before’s height (or use 100%) */
+
+    /* Use the same GIF but flipped vertically (or horizontally). 
+       Here we flip vertically (up‐down) with scaleY(-1). */
+    background:
+        url("/docs/starTest.gif") top center/cover no-repeat;
+
+    filter: brightness(0.2);
+    transform: scaleX(-1);
+    transform-origin: center center;
+    z-index: -2;
+    pointer-events: none;
+}
 
 .container {
     margin: 0 auto;
