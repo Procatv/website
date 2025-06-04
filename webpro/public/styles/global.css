@@ -100,11 +100,11 @@ body::after {
 .logo {
     font-family: "nice", monospace;
     font-size: 80px;
-    color: #ff07dac4;
-    text-shadow: 4px 4px 0 #7c0771ce,
-        0 0 6px #e969ff,
-        0 0 12px #de4bff,
-        0 0 18px #ffffff;
+    color: #91d9cf;
+    text-shadow: 4px 4px 0 rgba(45, 130, 138, 0.829),
+        0 0 6px #aedfdf,
+        0 0 12px #377bba,
+        0 0 18px #fcfafab7;
     letter-spacing: 3px;
     user-select: none;
 
@@ -123,12 +123,18 @@ body::after {
     margin: 0 auto;
 }
 
+.api1,
+.sidebox,
 .main,
 .blog,
 .projBox,
 .expBox {
     background-color: rgba(0, 0, 0, 0.813);
     color: white;
+    border-color: rgb(56, 56, 58);
+    /* box-shadow: 0 0 3px #001513; */
+    border-radius: 6px;
+    border-width: 3px;
 }
 
 header {
@@ -166,12 +172,9 @@ nav a {
 .main {
     width: 680px;
     margin: 0 20px 0 0;
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
     box-sizing: border-box;
-    border-radius: 12px;
+
 }
 
 .main p {
@@ -240,9 +243,9 @@ nav a {
     margin-right: 20px;
     margin-top: 5px;
     image-rendering: pixelated;
-    border: 4px solid #ae51a0;
-    outline: 2px solid #893ca8;
-    border-color: rgb(42, 40, 40);
+    border: 4px solid #000000;
+    outline: 2px solid #000000;
+    border-color: rgb(0, 0, 0);
     box-shadow: 0px 0px #f5cfff;
     outline-offset: -2px;
 
@@ -299,7 +302,6 @@ nav a {
     margin-top: 40px;
     max-width: 250px;
     padding: 20px;
-    border-radius: 10px;
 }
 
 
@@ -336,7 +338,6 @@ nav a {
     border-color: rgb(41, 40, 42);
     box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
 }
 
 /* unchanged centering row */
@@ -362,12 +363,8 @@ nav a {
     margin-top: 20px;
     box-sizing: border-box;
     width: 680px;
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
     box-sizing: border-box;
-    border-radius: 12px;
 
 }
 
@@ -478,26 +475,18 @@ nav a {
     /* optional – hides overflow text    */
     text-overflow: ellipsis;
     word-wrap: break-word;
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 12px;
     padding-bottom: 20px;
 
 }
 
 .projBox {
     width: 680px;
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
     padding-bottom: 20px;
     box-sizing: border-box;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 12px;
 }
 
 .projects {
@@ -530,13 +519,9 @@ nav a {
 .expBox {
     width: 680px;
     font-family: "double";
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0 0 6px #fff;
     border-style: solid;
-    border-width: 2px;
     box-sizing: border-box;
     margin-bottom: 40px;
-    border-radius: 12px;
 
 
 }
@@ -610,11 +595,7 @@ th {
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
-    border-color: rgb(42, 40, 40);
-    box-shadow: 0px 0px 6px 0px #fbf9f9;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 12px;
 }
 
 .api1 p {
