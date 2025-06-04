@@ -645,7 +645,6 @@ th {
 
 .api2 {
     width: 200px;
-    font-size: 10px;
     margin-top: 15px;
     /* explicit so nothing shrinks */
     flex: 0 0 150px;
@@ -665,6 +664,11 @@ th {
     text-overflow: ellipsis;
     word-wrap: break-word;
     border-style: solid;
+}
+
+.api2 img {
+    height: 60px;
+    width: 60px;
 }
 
 .api1 p {
