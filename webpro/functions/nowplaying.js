@@ -18,7 +18,7 @@ export async function onRequest(context) {
       );
     }
   
-    // 2) Build Last.fm URL
+    // 2) Build Last.fm URLefsfs
     const lastfmUrl = new URL("https://ws.audioscrobbler.com/2.0/");
     lastfmUrl.searchParams.set("method", "user.getRecentTracks");
     lastfmUrl.searchParams.set("user", LASTFM_USERNAME);
