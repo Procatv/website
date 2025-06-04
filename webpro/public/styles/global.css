@@ -354,11 +354,11 @@ nav a {
 .side.box {
     width: 180px;
     /* explicit so nothing shrinks */
-    flex: 0 0 160px;
+    /* flex: 0 0 160px; */
     font-family: "double";
     font-size: 20px;
     text-align: left;
-    height: 327px;
+    /* height: 397px; */
     background-color: #000000db;
     overflow: hidden;
     /* optional – hides overflow text    */
@@ -502,7 +502,7 @@ nav a {
 .sidebox {
     width: 200px;
     /* explicit so nothing shrinks */
-    flex: 0 0 190px;
+    flex: 0 0 240px;
     font-family: "double";
     font-size: 20px;
     text-align: left;
@@ -619,7 +619,7 @@ th {
 
 .api1 {
     width: 200px;
-    margin-top: 20px;
+    margin-top: 15px;
     /* explicit so nothing shrinks */
     flex: 0 0 60px;
     font-family: "double";
