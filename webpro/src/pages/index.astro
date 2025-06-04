@@ -154,29 +154,42 @@
 </div>
 <div class="api2">
   <p>🎵 Now Playing</p>
-  <img src={json.imageUrl} alt="{json.track} album art" />
+  <!-- 1) Give the img an ID so we can target it in JS -->
+  <img id="nowplaying-img" src="" alt="" />
   <p id="now-playing">Loading…</p>
 </div>
 
 <script>
   (async () => {
     try {
-      const res = await fetch("/nowplaying"); // <-- calls webpro/functions/nowplaying.js
-      if (!res.ok) {
-        document.getElementById("now-playing").innerText = "Error fetching data.";
-        return;
-      }
+      const res = await fetch("/nowplaying");
       const json = await res.json();
-      const container = document.getElementById("now-playing");
+
+      const textEl = document.getElementById("now-playing");
+      const imgEl  = document.getElementById("nowplaying-img");
 
       if (json.track && json.artist) {
-        container.innerText = `"${json.track}" by ${json.artist}` +
-          (json.album ? ` (from “${json.album}”)` : "");
+        // Update the text
+        if (json.lastPlayed === "now") {
+          textEl.innerText = `Now playing: "${json.track}" by ${json.artist}`;
+        } else {
+          textEl.innerText = `Last played (${json.lastPlayed}): "${json.track}" by ${json.artist}`;
+        }
+
+        // Set the <img> src + alt if we have an image URL
+        if (json.imageUrl) {
+          imgEl.src = json.imageUrl;
+          imgEl.alt = `${json.track} album art`;
+          imgEl.style.display = ""; // un-hide it
+        } else {
+          imgEl.style.display = "none";
+        }
       } else {
-        container.innerText = "Nothing is playing right now.";
+        textEl.innerText = "No listening history yet.";
+        imgEl.style.display = "none";
       }
     } catch (err) {
-      document.getElementById("now-playing").innerText = "Fetch failed.";
+      document.getElementById("now-playing").innerText = "Error fetching now playing.";
       console.error(err);
     }
   })();
