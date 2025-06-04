@@ -25,12 +25,19 @@
                     <!-- Flex container for profile and skills -->
                     <div class = "Overall">
                     <div class = "side">
-                    <div class = "headshot">
-  <img 
-    id="headshot-img"
-    src="https://website-6gp.pages.dev/docs/pixelHead.png"
-    data-hover="/docs/headshot.JPG"
-    alt="Catherine head-shot">                    </div>
+                    <div class="headshot">
+                    <div class="photo-wrapper">
+                        <img
+                        id="headshot-img"
+                        src="/docs/headshot-3.png"
+                        alt="Headshot">
+                    </div>
+                    <img
+                        class="frame-overlay"
+                        src="/docs/frame1.webp"
+                        alt="Frame overlay">
+                    </div>
+
                     </div>
                     <div class="About">
                         <div class="profile">
@@ -136,18 +143,6 @@
     </span>
   </p>
 </div>
-        </div> <!-- container -->
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const pic = document.querySelector('#headshot-img');
-                const original = pic.src;
-                const hover = pic.dataset.hover;
-
-                pic.addEventListener('mouseenter', () => pic.src = hover);
-                pic.addEventListener('mouseleave', () => pic.src = original);
-            });
-        </script>
         <script>
 document.addEventListener('DOMContentLoaded', () => {
   const intro = document.getElementById('introText');
