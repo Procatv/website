@@ -644,21 +644,25 @@ th {
 }
 
 .api2 {
-    width: 200px;
-    margin-top: 15px;
-    /* explicit so nothing shrinks */
-    flex: 0 0 150px;
+    display: grid;
+    padding-top: 10px;
+    /* vertically center text and image */
+    /* push text left, image right */
+    gap: 10px;
+    /* space between text and image */
+    margin-top: 10px;
+    width: 160px;
+    padding: 20px 20px;
+
     font-family: "double";
-    font-size: 20px;
+    font-size: 17px;
     color: white;
-    text-align: center;
+
     text-shadow:
-        /* glow layers – same hue, larger blur */
         0 0 6px #0e535182,
-        /* near glow  */
         0 0 12px #083232af,
-        /* mid glow   */
         0 0 18px #105d542a;
+
     background-color: #000000db;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -666,9 +670,29 @@ th {
     border-style: solid;
 }
 
-.api2 img {
+.api2-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+
+}
+
+#nowplaying {
+    margin-left: 10px;
+}
+
+#nowplaying-img {
     height: 60px;
     width: 60px;
+    padding-right: 10px;
+    flex-shrink: 0;
+    align-items: flex-start;
+}
+
+.api2 p {
+
+    margin: 0;
+
 }
 
 .api1 p {

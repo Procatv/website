@@ -153,10 +153,13 @@
   </p>
 </div>
 <div class="api2">
-  <p>🎵 Now Playing</p>
+<div class="api2-title"><p>🎵 Now Playing</p></div>
   <!-- 1) Give the img an ID so we can target it in JS -->
+  <div class="api2-content">
+    
   <img id="nowplaying-img" src="" alt="" />
   <p id="now-playing">Loading…</p>
+  </div>
 </div>
 
 <script>
@@ -189,7 +192,7 @@
         imgEl.style.display = "none";
       }
     } catch (err) {
-      document.getElementById("now-playing").innerText = "Error fetching now playing.";
+      document.getElementById("now-playing").innerText = "Error fetching";
       console.error(err);
     }
   })();
