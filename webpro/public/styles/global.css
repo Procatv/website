@@ -180,10 +180,13 @@ nav a {
 .main p {
     font-size: 18px;
     font-family: "double";
-    --body-text-shadow:
-        0 0 20px #ffffff9f,
-        0 0 20px #b300ff4b;
-    text-shadow: var(--body-text-shadow);
+    text-shadow:
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
 }
 
 .main h2 {
@@ -281,10 +284,13 @@ nav a {
 
 .profile-text {
     max-width: 400px;
-    --body-text-shadow:
-        0 0 20px #ffffff9f,
-        0 0 20px #b300ff4b;
-    text-shadow: var(--body-text-shadow);
+    text-shadow:
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
 }
 
 .profile-text h3 {
@@ -309,17 +315,16 @@ nav a {
     padding-left: 20px;
     max-width: 1000px;
     margin: 0 auto;
-    color: rgba(255, 255, 255, 0.893);
+    color: rgba(22, 130, 133, 0.893);
     text-shadow:
-        /* hard offset shadow (keeps pixel-art look) */
-        4px 4px 0 #7c07704e,
+
 
         /* glow layers – same hue, larger blur */
-        0 0 6px #e969ff26,
+        0 0 6px #0e535182,
         /* near glow  */
-        0 0 12px #de7ef361,
+        0 0 12px #083232af,
         /* mid glow   */
-        0 0 18px #ebaedd2a;
+        0 0 18px #105d542a;
 }
 
 .side.box {
@@ -369,24 +374,26 @@ nav a {
 }
 
 .blog p {
-    --body-text-shadow:
-        0 0 20px #ffffff9f,
-        0 0 20px #b300ff4b;
-    text-shadow: var(--body-text-shadow);
+    text-shadow:
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
 }
 
 .blog h2 {
-    color: rgba(255, 255, 255, 0.893);
+    color: rgba(22, 130, 133, 0.893);
     text-shadow:
-        /* hard offset shadow (keeps pixel-art look) */
-        4px 4px 0 #7c07704e,
+
 
         /* glow layers – same hue, larger blur */
-        0 0 6px #e969ff26,
+        0 0 6px #0e535182,
         /* near glow  */
-        0 0 12px #de7ef361,
+        0 0 12px #083232af,
         /* mid glow   */
-        0 0 18px #ebaedd2a;
+        0 0 18px #105d542a;
 }
 
 .project-list {
@@ -408,10 +415,13 @@ nav a {
     font-size: 16px;
     font-family: "double";
     color: white;
-    --body-text-shadow:
-        0 0 20px #ffffff9f,
-        0 0 20px #b300ff4b;
-    text-shadow: var(--body-text-shadow);
+    text-shadow:
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
 }
 
 /* remove bullets & tighten spacing */
@@ -428,7 +438,7 @@ nav a {
 }
 
 .link-list a {
-    font-family: "perfect", monospace;
+    font-family: "double";
     /* match your pixel font */
     color: #ffffff;
     /* light purple to fit the theme */
@@ -443,19 +453,16 @@ nav a {
 
 .sideTitle {
     text-align: center;
-    font-family: "double";
-    font-weight: bold;
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.893);
+    font-family: "double";
+    color: rgba(22, 130, 133, 0.893);
     text-shadow:
-        /* hard offset shadow (keeps pixel-art look) */
-        4px 4px 0 #7c07704e,
         /* glow layers – same hue, larger blur */
-        0 0 6px #e969ff26,
+        0 0 6px #0e535182,
         /* near glow  */
-        0 0 12px #de7ef361,
+        0 0 12px #083232af,
         /* mid glow   */
-        0 0 18px #ebaedd2a;
+        0 0 18px #105d542a;
 }
 
 .mainBox {
@@ -497,17 +504,16 @@ nav a {
 
 .projects h2 {
     font-family: "double";
-    color: rgba(255, 255, 255, 0.893);
+    color: rgba(22, 130, 133, 0.893);
     text-shadow:
-        /* hard offset shadow (keeps pixel-art look) */
-        4px 4px 0 #7c07704e,
+
 
         /* glow layers – same hue, larger blur */
-        0 0 6px #e969ff26,
+        0 0 6px #0e535182,
         /* near glow  */
-        0 0 12px #de7ef361,
+        0 0 12px #083232af,
         /* mid glow   */
-        0 0 18px #ebaedd2a;
+        0 0 18px #105d542a;
 }
 
 .projContent {
@@ -559,10 +565,13 @@ th {
 }
 
 .job-list p {
-    --body-text-shadow:
-        0 0 20px #ffffff9f,
-        0 0 20px #b300ff4b;
-    text-shadow: var(--body-text-shadow);
+    text-shadow:
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
 }
 
 .job-list h4 {
@@ -582,15 +591,14 @@ th {
     color: white;
     text-align: center;
     text-shadow:
-        /* hard offset shadow (keeps pixel-art look) */
-        4px 4px 0 #7c0771ce,
+
 
         /* glow layers – same hue, larger blur */
-        0 0 6px #e969ff,
+        0 0 6px #0e535182,
         /* near glow  */
-        0 0 12px #dd7ef3,
+        0 0 12px #083232af,
         /* mid glow   */
-        0 0 18px #ebaedd;
+        0 0 18px #105d542a;
     background-color: #000000db;
     overflow: hidden;
     text-overflow: ellipsis;
