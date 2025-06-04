@@ -152,6 +152,35 @@
     </span>
   </p>
 </div>
+<div class="api2">
+  <p>🎵 Now Playing</p>
+  <p id="now-playing">Loading…</p>
+</div>
+
+<script>
+  (async () => {
+    try {
+      const res = await fetch("/nowplaying"); // <-- calls webpro/functions/nowplaying.js
+      if (!res.ok) {
+        document.getElementById("now-playing").innerText = "Error fetching data.";
+        return;
+      }
+      const json = await res.json();
+      const container = document.getElementById("now-playing");
+
+      if (json.track && json.artist) {
+        container.innerText = `"${json.track}" by ${json.artist}` +
+          (json.album ? ` (from “${json.album}”)` : "");
+      } else {
+        container.innerText = "Nothing is playing right now.";
+      }
+    } catch (err) {
+      document.getElementById("now-playing").innerText = "Fetch failed.";
+      console.error(err);
+    }
+  })();
+</script>
+
         <script>
 document.addEventListener('DOMContentLoaded', () => {
   const intro = document.getElementById('introText');

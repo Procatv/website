@@ -124,6 +124,7 @@ body::after {
 }
 
 .api1,
+.api2,
 .sidebox,
 .main,
 .blog,
@@ -629,6 +630,30 @@ th {
     text-shadow:
 
 
+        /* glow layers – same hue, larger blur */
+        0 0 6px #0e535182,
+        /* near glow  */
+        0 0 12px #083232af,
+        /* mid glow   */
+        0 0 18px #105d542a;
+    background-color: #000000db;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border-style: solid;
+}
+
+.api2 {
+    width: 200px;
+    font-size: 10px;
+    margin-top: 15px;
+    /* explicit so nothing shrinks */
+    flex: 0 0 150px;
+    font-family: "double";
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow:
         /* glow layers – same hue, larger blur */
         0 0 6px #0e535182,
         /* near glow  */
