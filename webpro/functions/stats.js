@@ -1,4 +1,4 @@
-// functions/api/stats.js
+// functions/stats.js
 export async function onRequest(context) {
     const { request, env, waitUntil } = context;
   
@@ -20,14 +20,13 @@ export async function onRequest(context) {
   
     /* ---------- 3. Online-now counter (3-min TTL ‘heartbeat’) ---------- */
     const onlineNow = parseInt(await env.PAGE_STATS.get("online") || "0") + 1;
-    await env.PAGE_STATS.put("online", onlineNow.toString(), { expirationTtl: 180 });
-  
-    // schedule a decrement 3 min after the response is returned
-    waitUntil(env.PAGE_STATS.put(
-      "online",
-      (onlineNow - 1).toString(),
-      { expiration: Date.now() + 180_000 }
-    ));
+    // +1 immediately …
+await env.PAGE_STATS.put("online", onlineNow.toString(), { expirationTtl: 180 });
+
+// … then schedule a –1 three minutes later
+waitUntil(env.PAGE_STATS.put("online", (onlineNow - 1).toString(),
+                             { expiration: Date.now() + 180_000 }));
+
   
     /* ---------- 4. Send JSON back ---------- */
     const body = JSON.stringify({
