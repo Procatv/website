@@ -1,0 +1,6 @@
+name = "my-pages-funcs"          
+compatibility_date = "2025-06-05"
+
+[[kv_namespaces]]
+binding = "PAGE_STATS"        
+id = "2ee4511672fe41099da42d140361086e"

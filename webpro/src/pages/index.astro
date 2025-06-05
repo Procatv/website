@@ -162,6 +162,28 @@
   </div>
 </div>
 
+<div class="api3">
+  <div class="stats">
+    <div class="row"><span class="label">Visits</span><span id="visits">–</span></div>
+    <div class="row"><span class="label">Uniq. Visitors</span><span id="unique">–</span></div>
+    <div class="row"><span class="label">On-site</span><span id="online">–</span></div>
+  </div>
+</div>
+
+
+<script type="module">
+  (async () => {
+    const r = await fetch("/stats").then(r => r.json());
+    visits.textContent  = r.total.toLocaleString();
+    unique.textContent  = r.unique.toLocaleString();
+    online.textContent  = r.online;
+  })();
+</script>
+
+</div>
+
+</div>
+
 <script>
   (async () => {
     try {

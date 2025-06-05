@@ -123,6 +123,7 @@ body::after {
     margin: 0 auto;
 }
 
+.stats,
 .api1,
 .api2,
 .sidebox,
@@ -692,9 +693,42 @@ th {
 .api2 p {
 
     margin: 0;
+    width: 200px;
+    text-shadow:
+        0 0 6px #0e535182,
+        0 0 12px #083232af,
+        0 0 18px #105d542a;
 
 }
 
+.stats {
+    margin-top: 15px;
+    height: 140px;
+    color: white;
+
+    border-style: solid;
+    font-family: "double";
+}
+
+.stats .row {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    grid-template-columns: 120px auto;
+    /* pushes label left, value right */
+    gap: 1rem;
+    /* optional breathing room */
+    max-width: 220px;
+    /* keeps lines from growing wide */
+}
+
+.label {}
+
+#visits,
+#unique,
+#online {}
+
+/* equal-width digits */
 .api1 p {
     font-size: 14px;
 }
