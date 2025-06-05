@@ -3,7 +3,7 @@ export async function onRequest(context) {
     const { request, env, waitUntil } = context;
   
     // only allow /api/stats
-    if (new URL(request.url).pathname !== "/api/stats")
+    if (new URL(request.url).pathname !== "/stats")
       return new Response("Not found", { status: 404 });
   
     /* ---------- 1. Total page views ---------- */
