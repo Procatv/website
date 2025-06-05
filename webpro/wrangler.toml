@@ -1,5 +1,6 @@
 name = "my-pages-funcs"          
 compatibility_date = "2025-06-05"
+pages_build_output_dir = "./dist" 
 
 [[kv_namespaces]]
 binding = "PAGE_STATS"        
